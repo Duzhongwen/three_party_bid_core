@@ -5,9 +5,6 @@ describe("SignUp", function() {
 
     });
 
-    it("should one activity was created on creating", function(){
-
-    });
 
     it("should one sms with signing up content sign up successfully when it is signing up", function(){
 

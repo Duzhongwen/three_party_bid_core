@@ -2,12 +2,22 @@ describe("SignUp", function() {
 
 
     beforeEach(function() {
-
+        init_activity_database();
+        var activities = JSON.parse(localStorage.activities);
+        var activity = {
+            name: "test",
+            sign_ups: [],
+            bids:[]
+        }
+        activities.push(activity);
+        localStorage.activities = activities;
+        localStorage.is_signing_up = "";
     });
 
-    it("should one activity was created on creating", function(){
+    afterEach(function(){
+        localStorage.clear();
+    })
 
-    });
 
     it("should one sms with signing up content sign up successfully when it is signing up", function(){
 
