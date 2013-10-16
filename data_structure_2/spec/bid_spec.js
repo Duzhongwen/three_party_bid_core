@@ -4,8 +4,6 @@ describe("Bidding", function() {
     beforeEach(function() {
         init_activity_database();
         init_first_activity();
-        var activity = JSON.parse(localStorage.activities)[0];
-        activity
         localStorage.is_bidding = "";
     });
 
