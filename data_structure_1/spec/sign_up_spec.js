@@ -3,14 +3,7 @@ describe("SignUp", function() {
 
     beforeEach(function() {
         init_activity_database();
-        var activities = JSON.parse(localStorage.activities);
-        var activity = {
-            name: "test",
-            sign_ups: [],
-            bids:[]
-        }
-        activities.push(activity);
-        localStorage.activities = activities;
+        init_first_activity();
         localStorage.is_signing_up = "";
     });
 
@@ -20,7 +13,8 @@ describe("SignUp", function() {
 
 
     it("should one sms with signing up content sign up successfully when it is signing up", function(){
-
+        var sms_json = build_sms_json("BM仝键");
+        notify_sms_received(sms_json);
     });
 
     it("should one sms with signing up content sign up failed when user has signed", function(){

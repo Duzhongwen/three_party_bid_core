@@ -1,17 +1,10 @@
+
 describe("Bidding", function() {
 
 
     beforeEach(function() {
         init_activity_database();
-        var activities = JSON.parse(localStorage.activities);
-        var activity = {
-            name: "test",
-            sign_ups: [],
-            bids:[]
-        }
-        activities.push(activity);
-        localStorage.activities = activities;
-
+        init_first_activity();
         localStorage.is_bidding = "";
     });
 
