@@ -3,15 +3,20 @@ function init_activity_database(){
     localStorage.activities = [];
 }
 
-function init_first_activity() {
+function init_two_activity() {
     var activities = JSON.parse(localStorage.activities);
-    var activity = {
-        name: "test",
+    var two_activities = [{
+        name: "first activity",
         sign_ups: [],
         bids: []
-    }
-    activities.push(activity);
+    }, {
+        name: "second activity",
+        sign_ups: [],
+        bids: []
+    }];
+    activities.push(two_activities);
     localStorage.activities = JSON.stringify(activities);
+    localStorage.current_activity = "second activity";
 }
 
 
