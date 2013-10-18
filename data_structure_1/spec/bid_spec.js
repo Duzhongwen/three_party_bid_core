@@ -1,10 +1,18 @@
 
-describe("Bidding", function() {
+describe("Bid", function() {
 
 
     beforeEach(function() {
         init_activity_database();
-        init_first_activity();
+        var activities = JSON.parse(localStorage.activities);
+        var activity = {
+            name: "first activity",
+            sign_ups: [],
+            bids: []
+        };
+        activities.push(activity);
+        localStorage.activities = JSON.stringify(activities);
+        localStorage.current_activity = "first activity";
         localStorage.is_bidding = "";
     });
 
@@ -12,24 +20,17 @@ describe("Bidding", function() {
         localStorage.clear();
     })
 
-    it("should bid successfully when it is bidding", function(){
+    it("should create new bid", function(){
+        create_new_bid("first activity");
 
+        var activities = JSON.parse(localStorage.activities);
+        expect(activities[1].bids.length).toBe(1);
+        expect(activities[1].bids[0].name).toBe("竞价1");
+        expect(activities[1].bids[0].biddings.length).toBe(0);
     });
 
-    it("should bid failed when it is not on bidding", function(){
 
-    });
 
-    it("should bid failed when user didn't sign up", function(){
 
-    });
-
-    it("should show minimum bidding", function(){
-
-    });
-
-    it("should show third minimum bidding as first when actual first and two is same", function(){
-
-    });
 
 });

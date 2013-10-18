@@ -4,6 +4,7 @@ describe("SignUp", function() {
     beforeEach(function() {
         init_activity_database();
         init_two_activity();
+        localStorage.current_activity = "second activity";
         localStorage.is_signing_up = "";
     });
 
