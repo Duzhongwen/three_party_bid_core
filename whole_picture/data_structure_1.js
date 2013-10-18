@@ -30,11 +30,13 @@ activities = [
                 biddings : [
                     {
                         name: "仝键",
+                        phone:"13600000000",
                         price: "12"
 
                     },
                     {
                         name: "于硕",
+                        phone:"15600000000",
                         price: "10"
                     }
                 ]
@@ -44,15 +46,19 @@ activities = [
                 biddings : [
                     {
                         name: "仝键",
+                        phone:"13600000000",
                         price: "10"
+
 
                     },
                     {
                         name: "于硕",
+                        phone:"15600000000",
                         price: "12"
                     },
                     {
                         name: "吴京川",
+                        phone:"13800000000",
                         price: "10"
                     }
                 ]

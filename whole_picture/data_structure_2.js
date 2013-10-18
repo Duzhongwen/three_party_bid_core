@@ -31,27 +31,27 @@ activities = {
         biddings:{
            "竞价1":[
                    {
-                       name: "仝键",
+                       phone:"13600000000",
                        price: "12"
 
                    },
                    {
-                       name: "于硕",
+                       phone:"15600000000",
                        price: "10"
                    }
            ],
            "竞价2": [
                 {
-                    name: "仝键",
+                    phone:"13600000000",
                     price: "10"
 
                 },
                 {
-                    name: "于硕",
+                    phone:"15600000000",
                     price: "12"
                 },
                 {
-                    name: "吴京川",
+                    phone:"13800000000",
                     price: "10"
                 }
            ]
