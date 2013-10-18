@@ -1,10 +1,12 @@
 
-describe("Bidding", function() {
+describe("Bid", function() {
 
 
     beforeEach(function() {
         init_activity_database();
-
+        init_two_activity();
+        init_sign_ups();
+        localStorage.current_activity = "1";
         localStorage.is_bidding = "";
     });
 
@@ -12,24 +14,14 @@ describe("Bidding", function() {
         localStorage.clear();
     })
 
-    it("should bid successfully when it is bidding", function(){
+    it("should create new bid", function(){
+        create_new_bid("1");
 
+        var bids = JSON.parse(localStorage.bids);
+        expect(bids.length).toBe(1);
+        expect(JSON.stringify(bids[0].biddings)).toBe("[]");
     });
 
-    it("should bid failed when it is not on bidding", function(){
 
-    });
-
-    it("should bid failed when user didn't sign up", function(){
-
-    });
-
-    it("should show minimum bidding", function(){
-
-    });
-
-    it("should show third minimum bidding as first when actual first and two is same", function(){
-
-    });
 
 });
