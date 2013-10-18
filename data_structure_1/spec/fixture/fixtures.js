@@ -14,7 +14,7 @@ function init_two_activity() {
         sign_ups: [],
         bids: []
     }];
-    activities.push(two_activities);
+    activities.push(two_activities[0],two_activities[1]);
     localStorage.activities = JSON.stringify(activities);
     localStorage.current_activity = "second activity";
 }
