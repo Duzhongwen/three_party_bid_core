@@ -1,6 +1,6 @@
 function init_activity_database(){
     localStorage.current_activity = "";
-    localStorage.activities = [];
+    localStorage.activities = "[]";
 }
 
 function init_two_activity() {
@@ -18,6 +18,3 @@ function init_two_activity() {
     localStorage.activities = JSON.stringify(activities);
     localStorage.current_activity = "second activity";
 }
-
-
-

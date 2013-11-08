@@ -3,7 +3,6 @@ describe("SignUp Render", function() {
 
     beforeEach(function() {
         init_activity_database();
-        var activities = JSON.parse(localStorage.activities);
         var two_activities = [{
             name: "first activity",
             sign_ups: [],
@@ -26,8 +25,7 @@ describe("SignUp Render", function() {
             ],
             bids: []
         }];
-        activities.push(two_activities);
-        localStorage.activities = JSON.stringify(activities);
+        localStorage.activities = JSON.stringify(two_activities);
         localStorage.current_activity = "second activity";
     });
 

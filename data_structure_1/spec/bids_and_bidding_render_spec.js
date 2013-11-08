@@ -66,7 +66,7 @@ describe("Bids and Bidding Render", function() {
                 }
             ]
         }];
-        activities.push(two_activities);
+        activities = two_activities;
         localStorage.activities = JSON.stringify(activities);
         localStorage.current_activity = "second activity";
         localStorage.is_bidding = "";
@@ -77,7 +77,7 @@ describe("Bids and Bidding Render", function() {
     })
 
     it("should show all bids", function(){
-        var bids = render_bids("second activity");
+        var bids = transform_bids_to_view_model("second activity");
 
         expect(bids.length).toBe(2);
         expect(bids[0].name).toBe("竞价1");
@@ -85,7 +85,7 @@ describe("Bids and Bidding Render", function() {
     });
 
     it("should show minimum not repeatable bidding", function(){
-        var biddings = render_biddings("second activity","竞价2");
+        var biddings = transform_biddings_to_view_model("second activity","竞价2");
 
         expect(biddings.length).toBe(1);
         expect(biddings[0].name).toBe("于硕");
