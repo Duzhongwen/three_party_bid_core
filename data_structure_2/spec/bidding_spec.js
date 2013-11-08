@@ -4,7 +4,6 @@ describe("Bidding", function() {
 
     beforeEach(function() {
         init_activity_database();
-        var activities = JSON.parse(localStorage.activities);
         var two_activities = [{
             name: "first activity",
             sign_ups: [],
@@ -31,9 +30,8 @@ describe("Bidding", function() {
                 "竞价1": []
                 }
         }];
-        activities.push(two_activities);
-        localStorage.activities = JSON.stringify(activities);
-        localStorage.current_activity = "1";
+        localStorage.activities = JSON.stringify(two_activities);
+        localStorage.current_activity_id = "1";
         localStorage.current_bid = "竞价1";
         localStorage.is_bidding = "";
     });
@@ -50,7 +48,7 @@ describe("Bidding", function() {
 
         var activities = JSON.parse(localStorage.activities);
         expect(activities["1"].biddings["竞价1"].length).toBe(1);
-        expect(activities["1"].biddings["竞价1"][0].name).toBe("仝键");
+
         expect(activities["1"].biddings["竞价1"][0].phone).toBe(phone_no);
         expect(activities["1"].biddings["竞价1"][0].price).toBe("12");
     });
@@ -97,7 +95,7 @@ describe("Bidding", function() {
 
         var activities = JSON.parse(localStorage.activities);
         expect(activities["1"].biddings["竞价1"].length).toBe(1);
-        expect(activities["1"].biddings["竞价1"][0].name).toBe("仝键");
+
         expect(activities["1"].biddings["竞价1"][0].phone).toBe(phone_no);
         expect(activities["1"].biddings["竞价1"][0].price).toBe("12");
     });

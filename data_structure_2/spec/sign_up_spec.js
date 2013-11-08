@@ -4,7 +4,7 @@ describe("SignUp", function() {
     beforeEach(function() {
         init_activity_database();
         init_two_activity();
-        localStorage.current_activity = "1";
+        localStorage.current_activity_id = "1";
         localStorage.is_signing_up = "";
     });
 
@@ -50,7 +50,7 @@ describe("SignUp", function() {
         var activities = JSON.parse(localStorage.activities);
         expect(activities[1].sign_ups.length).toBe(0);
         // no item
-        localStorage.removeItem(is_signing_up);
+        localStorage.removeItem("is_signing_up");
         notify_sms_received(sms_json);
 
         var activities = JSON.parse(localStorage.activities);
