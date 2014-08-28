@@ -24,6 +24,7 @@ describe("Bid", function() {
         create_new_bid("first activity");
 
         var activities = JSON.parse(localStorage.activities);
+        console.log(activities);
         expect(activities[0].bids.length).toBe(1);
         expect(activities[0].bids[0].name).toBe("竞价1");
         expect(activities[0].bids[0].biddings.length).toBe(0);
