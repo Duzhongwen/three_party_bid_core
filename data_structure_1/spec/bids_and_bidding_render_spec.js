@@ -74,11 +74,10 @@ describe("Bids and Bidding Render", function() {
 
     afterEach(function(){
         localStorage.clear();
-    })
+    });
 
     it("should show all bids", function(){
         var bids = transform_bids_to_view_model("second activity");
-
         expect(bids.length).toBe(2);
         expect(bids[0].name).toBe("竞价1");
         expect(bids[1].name).toBe("竞价2");
@@ -86,7 +85,7 @@ describe("Bids and Bidding Render", function() {
 
     it("should show minimum not repeatable bidding", function(){
         var biddings = transform_biddings_to_view_model("second activity","竞价2");
-
+        console.log(biddings);
         expect(biddings.length).toBe(1);
         expect(biddings[0].name).toBe("于硕");
         expect(biddings[0].phone).toBe("15600000000");

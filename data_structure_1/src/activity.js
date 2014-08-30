@@ -9,7 +9,6 @@ Activity.prototype.create=function() {
         name:this.activity
     };
     var activities=JSON.parse(localStorage['activities']||'[]');
-    console.log(activities);
     activities.unshift(activitys);
     localStorage.activities=JSON.stringify(activities);
     localStorage.current_activity = this.activity;
